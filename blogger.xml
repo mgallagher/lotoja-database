@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Ad" width="300">
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
+  <UserPref name="slotCode" display_name="Ad Slot Code" required="true"/>
+  <Content type="html">
+    <![CDATA[
+  <div id='dest'>
+  </div>
+  <script type="text/javascript">
+
+  function doRender(){
+    setTimeout(function() {
+
+    // setup variables
+    function resize() {
+      gadgets.window.adjustHeight();
+    };
+    var adUnit = document.createElement('script');
+    adUnit.src = 'https://a.interactivead.network/js/ian.js';
+    adUnit.setAttribute('data-ian-adslot', '3347R');
+    adUnit.async = true;
+    adUnit.onload = () => {
+      // Manually trigger DOMContentLoaded used in ian.js file
+      let DOMContentLoaded_event = document.createEvent('Event');
+      DOMContentLoaded_event.initEvent('DOMContentLoaded', true, true);
+      window.document.dispatchEvent(DOMContentLoaded_event);
+      console.log('v4');
+      setTimeout(function(){
+        resize();
+      }, 3000);
+    };
+
+
+    var div = document.createElement('div');
+    div.id = 'ianAdWrapper';
+    // div.appendChild(adUnit);
+
+    // set the slideshow to the placeholder div
+    var dest = document.getElementById('dest');
+    dest.style.width = '300px';
+    dest.style.height = '600px';
+    console.log('doRender v4');
+    dest.innerHTML = '';
+    dest.appendChild(adUnit);
+    }, 3000);
+  }
+  gadgets.util.registerOnLoadHandler(doRender);
+  </script>
+  ]]>
+  </Content>
+</Module>
