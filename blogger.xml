@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Ad" width="300">
+  <ModulePrefs
+    title="IAN Ad Embed"
+    title_url="http://interactivead.network"
+    description="IAN Embedded Ad"
+    author="IAN"
+    author_email="admin@ian.com"
+    thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png"
+    screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png"
+    width="300"
+    height="900">
     <Require feature="dynamic-height"/>
   </ModulePrefs>
   <UserPref name="slotCode" display_name="Ad Slot Code" required="true"/>
